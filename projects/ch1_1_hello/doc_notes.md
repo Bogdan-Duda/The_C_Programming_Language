@@ -5,7 +5,7 @@
 * Confirm baseline execution patterns and standard stream output mapping
 
 ## Technical Insights
-* **Explicit Prototyping:** Used `int main(void)` instead of an empty `()` parameter block. This explicitly tells the compiler that the function takes exactly zero arguments, enforcing strict type-safety checks on the execution stack.
+* **Explicit Prototyping:** Used `int main(void)` instead of an empty `()` parameter block. This explicitly tells the compiler that the function takes exactly zero arguments.
 * **Defensive Engineering:** Intercepted the `printf` execution path by checking if the return value is `< 0`. Since `printf` returns a negative value (`EOF`) upon encountering an internal stream write failure, this check guards against silent system-level I/O corruption.
 * **System Boundary Return:** Returned `0` at termination to signal a flawless exit status back to the parent shell process.
 
